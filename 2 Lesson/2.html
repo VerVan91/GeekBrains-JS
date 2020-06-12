@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 2; 
+        let x = 1 + (a *= 2);
+        console.log(a) // 4
+        console.log(x) // 5
+        /* Здесь используется оператор присваивания "*=".
+        a *= 2 расшифровывается как a = a * 2 и так как данной действие стоит в скобках
+        и функция умножения имеет больший приоритете, чем сложение, то сперва 2*2 и потом к этому прибавляется 1.
+        Следовательно a = 2*2 = 4, а b=(2*2)+1=5 */ 
+         
+    </script>
+</body>
+</html>
