@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2b es6</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (text) {
+            this.text = text;
+        }
+
+
+        const newText = new Post('Ivanov', 'tra-ta-ta', 2012);
+        console.log(newText);
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        const AttachedPost2 = new AttachedPost('Petrov', 'ttu-tu-tu', 2014);
+        console.log(AttachedPost2);
+
+    </script>
+</body>
+
+</html>
